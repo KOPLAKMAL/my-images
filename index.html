@@ -8,16 +8,16 @@
     body {
       font-family: Arial, sans-serif;
       background: #121212; /* hitam gelap */
-      color: #f5f5f5;       /* teks putih */
+      color: #f5f5f5;
       padding: 20px;
     }
     h1 {
       text-align: center;
-      color: #ffffff; /* putih */
+      color: #ffffff;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 kolom tetap */
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
       align-items: start;
     }
@@ -26,34 +26,36 @@
       flex-direction: column;
       gap: 15px;
       padding: 0 10px;
-      border-right: 2px solid #444; /* abu-abu gelap */
+      border-right: 2px solid #444;
     }
     .col:last-child {
       border-right: none;
     }
     .col a {
       text-decoration: none;
-      color: #ddd; /* teks link abu terang */
+      color: #ddd;
       text-align: center;
       display: block;
       transition: color 0.3s ease;
     }
     .col a:hover {
-      color: #00bfff; /* biru neon pas hover */
+      color: #00bfff;
     }
     .col img {
-      width: 100%;
+      max-height: 200px;  /* <<< Biar ga kegedean */
+      width: auto;
+      margin: 0 auto;     /* center */
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.1); /* shadow terang */
+      box-shadow: 0 2px 10px rgba(255,255,255,0.1);
       transition: transform 0.3s ease;
     }
     .col img:hover {
-      transform: scale(1.05); /* efek zoom */
+      transform: scale(1.05);
     }
     .col h2 {
       text-align: center;
       margin-bottom: 10px;
-      color: #ffcc00; /* kuning emas biar kontras */
+      color: #ffcc00;
     }
   </style>
 </head>
