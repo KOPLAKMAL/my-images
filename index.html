@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #121212; /* hitam gelap */
+      background: #121212;
       color: #f5f5f5;
       padding: 20px;
     }
@@ -15,21 +15,39 @@
       text-align: center;
       color: #ffffff;
     }
+
+    /* grid 4 kolom dengan jarak antar kolom */
     .gallery {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      align-items: start;
+      column-gap: 40px; /* jarak antar kolom */
+      position: relative;
     }
+
+    /* bikin garis pemisah di tengah gap */
+    .gallery::before,
+    .gallery::after,
+    .gallery .divider1,
+    .gallery .divider2,
+    .gallery .divider3 {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #555; /* warna garis */
+    }
+
+    /* posisi garis di tengah antar kolom */
+    .gallery .divider1 { left: 25%; }
+    .gallery .divider2 { left: 50%; }
+    .gallery .divider3 { left: 75%; }
+
     .col {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      padding: 0 35px;
-      border-right: 2px solid #555;
-    }
-    .col:last-child {
-      border-right: none;
+      padding: 0 10px;
     }
     .col a {
       text-decoration: none;
@@ -42,9 +60,9 @@
       color: #00bfff;
     }
     .col img {
-      max-height: 350px;  /* <<< Biar ga kegedean */
+      max-height: 350px;
       width: auto;
-      margin: 0 auto;     /* center */
+      margin: 0 auto;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(255,255,255,0.1);
       transition: transform 0.3s ease;
@@ -62,6 +80,11 @@
 <body>
   <h1>My Images</h1>
   <div class="gallery">
+    <!-- garis pemisah -->
+    <div class="divider1"></div>
+    <div class="divider2"></div>
+    <div class="divider3"></div>
+
     <!-- zzz -->
     <div class="col">
       <h2>ZZZ</h2>
